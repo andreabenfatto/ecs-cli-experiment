@@ -1,0 +1,13 @@
+version: '2'
+services:
+  www:
+    build: ./webserver/Dockerfile
+    image: 159802860893.dkr.ecr.eu-west-1.amazonaws.com/redpineapplemedia/repository-www-andreaecstest
+    container_name: container-www-andreaecstest
+    links:
+      - app
+    ports:
+      - "80:80"
+  app:
+    build: ./app/Dockerfile
+    image: 159802860893.dkr.ecr.eu-west-1.amazonaws.com/redpineapplemedia/repository-app-andreaecstest

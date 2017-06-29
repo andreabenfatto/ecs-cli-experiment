@@ -1,0 +1,13 @@
+version: '2'
+services:
+  www:
+    cpu_shares: 1024
+    mem_limit: 2048
+    image: 159802860893.dkr.ecr.eu-west-1.amazonaws.com/redpineapplemedia/repository-www-andreaecstest
+    container_name: container-www-andreaecstest
+    links:
+      - app
+    ports:
+      - "0:80"
+  app:
+      image: 159802860893.dkr.ecr.eu-west-1.amazonaws.com/redpineapplemedia/repository-app-andreaecstest:latest
